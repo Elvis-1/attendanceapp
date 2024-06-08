@@ -29,8 +29,12 @@ class AuthService {
 
       return "Login Successful";
     } on FirebaseAuthException catch (e) {
+      print('------------- login firebase auth exception --------------');
+      print(e.message.toString());
       return e.message.toString();
     } catch (e) {
+      print('------------- login catch error --------------');
+      print(e.toString());
       return e.toString();
     }
   }

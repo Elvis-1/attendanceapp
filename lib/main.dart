@@ -2,17 +2,12 @@ import 'package:attendanceapp/controllers/auth_controller.dart';
 import 'package:attendanceapp/controllers/check_controller.dart';
 import 'package:attendanceapp/controllers/user_controller.dart';
 import 'package:attendanceapp/data/global_service.dart';
-import 'package:attendanceapp/init.dart';
 import 'package:attendanceapp/screens/auth_screens/sign_up.dart';
 import 'package:attendanceapp/screens/home_screen.dart';
 import 'package:attendanceapp/screens/auth_screens/login_screen.dart';
-import 'package:attendanceapp/model/user_model.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart';
 import 'package:month_year_picker/month_year_picker.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'firebase_options.dart';
 
 void main() async {
   await GlobalService.init();

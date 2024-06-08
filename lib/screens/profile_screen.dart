@@ -3,16 +3,11 @@ import 'package:attendanceapp/controllers/user_controller.dart';
 import 'package:attendanceapp/data/global_service.dart';
 import 'package:attendanceapp/model/user_model.dart';
 import 'package:attendanceapp/utils/snack_bar.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:path_provider/path_provider.dart';
 
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
@@ -134,6 +129,20 @@ class _ProfileScreenState extends State<ProfileScreen> {
     } else {
       print("Ref does not exist");
     }
+  }
+
+  UserModel? userDetails;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    userDetails = GlobalService.sharedPreferencesManager.getUserDetails();
+
+    // firstNameController.text = userDetails?.firstName ?? '';
+    // lastNameController.text = userDetails?.lastName ?? '';
+    // birthController.text = userDetails?.birthDate ?? '';
+    // addressController.text = userDetails?.address ?? '';
   }
 
   @override

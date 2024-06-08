@@ -40,6 +40,8 @@ class SharedPreferencesManager {
     String? userJson = _prefs.getString(Constant.userDetails);
 
     if (userJson != null) {
+      print('----------- user json--------------');
+      print(userJson);
       final userMap = jsonDecode(userJson);
       return UserModel.fromJson(userMap);
     }
